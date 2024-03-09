@@ -1,9 +1,9 @@
 <?php
 
-namespace Wooves\ProductHealth\WooCommerce;
+namespace MindBlown\ProductHealth\WooCommerce;
 
-use Wooves\ProductHealth\Contracts\Hookable;
-use Wooves\ProductHealth\WooCommerce\AdminPage;
+use MindBlown\ProductHealth\Contracts\Hookable;
+use MindBlown\ProductHealth\WooCommerce\AdminPage;
 
 class RegisterMenu extends Hookable{
 

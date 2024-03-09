@@ -1,7 +1,8 @@
 <?php
 
-namespace Wooves\ProductHealth\Contracts;
+namespace MindBlown\ProductHealth\Contracts;
 
+use MindBlown\ProductHealth\Models\Issue;
 
 abstract class Validator{
 
@@ -43,5 +44,19 @@ abstract class Validator{
     public function message() : string 
     {
         return '';
+    }
+
+
+    /**
+     * Create an issue out of this faulty validator
+     *
+     * @return MindBlown\ProductHealth\Models\Issue;
+     */
+    public function to_issue()
+    {
+        $issue = new Issue();
+        $issue->product_id = $this->product->get_id();
+        $issue->message = $this->message();
+        return $issue;
     }
 }

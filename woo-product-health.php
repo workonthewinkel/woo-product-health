@@ -8,7 +8,7 @@
  */
 
 
-use Wooves\ProductHealth\Plugin;
+use MindBlown\ProductHealth\Plugin;
 
 define( 'PRODUCTHEALTH_FILE', __FILE__ );
 define( 'PRODUCTHEALTH_PATH', dirname( PRODUCTHEALTH_FILE ) );
@@ -35,6 +35,7 @@ function product_health_plugin() : Plugin {
 	}
 
 	$plugin = new Plugin();
+    $plugin->boot();
 	$plugin->init();
 
 	return $plugin;

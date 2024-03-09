@@ -1,8 +1,8 @@
 <?php
 
-namespace Wooves\ProductHealth\Controllers;
+namespace MindBlown\ProductHealth\Controllers;
 
-use Wooves\ProductHealth\Contracts\Controller;
+use MindBlown\ProductHealth\Contracts\Controller;
 
 class ProductController extends Controller{
 
@@ -12,9 +12,9 @@ class ProductController extends Controller{
      *
      * @return void
      */
-    public function scan()
+    public function scan( $limit = 10 )
     {
-        $products = $this->get_batch();
+        $products = $this->get_batch( 10 );
         
         //schedule a job for each product:
         foreach( $products as $product ){
@@ -32,9 +32,9 @@ class ProductController extends Controller{
      *
      * @return void
      */
-    public function get_batch()
+    public function get_batch( $limit = 10 )
     {
-        return \wc_get_products([ 'limit' => 3 ]);
+        return \wc_get_products([ 'limit' => $limit ]);
     }
 
 

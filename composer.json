@@ -1,5 +1,5 @@
 {
-    "name": "wooves/woo-product-health",
+    "name": "mind-blown/woo-product-health",
     "description": "Check the health of your Woocommerce products",
     "type": "wordpress-plugin",
     "license": "GPL-2.0-or-later",
@@ -13,13 +13,14 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Wooves\\ProductHealth\\": "src/"
+            "MindBlown\\ProductHealth\\": "src/"
         },
         "files": [
             "src/functions.php"
         ]
     },
     "require": {
-        "illuminate/collections": "^10.47"
+        "illuminate/collections": "^10.47",
+        "illuminate/database": "^10.47"
     }
 }

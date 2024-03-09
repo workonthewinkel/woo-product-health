@@ -1,6 +1,6 @@
 <?php
 
-namespace Wooves\ProductHealth\Queue;
+namespace MindBlown\ProductHealth\Queue;
 
 class Register{
 
@@ -11,7 +11,7 @@ class Register{
         foreach( $queueables as $queueable ){
 
             //loop through each instance and register their hook
-            $instance = '\\Wooves\\ProductHealth\\Queue\\'.$queueable;
+            $instance = '\\MindBlown\\ProductHealth\\Queue\\'.$queueable;
             ( new $instance )->register_hooks();
         }
     }

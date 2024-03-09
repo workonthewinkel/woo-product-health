@@ -1,5 +1,5 @@
 <?php
-namespace Wooves\ProductHealth\Contracts;
+namespace MindBlown\ProductHealth\Contracts;
 
 abstract class Hookable{
 

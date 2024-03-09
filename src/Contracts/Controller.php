@@ -1,6 +1,6 @@
 <?php
 
-namespace Wooves\ProductHealth\Contracts;
+namespace MindBlown\ProductHealth\Contracts;
 
 class Controller{
     

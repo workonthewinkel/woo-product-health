@@ -1,8 +1,19 @@
 <?php
 
-namespace Wooves\ProductHealth\Contracts;
+namespace MindBlown\ProductHealth\Contracts;
 
 abstract class View{
+
+
+    /**
+     * What to do before render?
+     *
+     * @return void
+     */
+    public function pre_render()
+    {
+        return;
+    }
 
     /**
      * Render this view
@@ -11,6 +22,8 @@ abstract class View{
      */
     public function render()
     {
+        $this->pre_render();
+
         $template = $this->template();
         $data = $this->data();
 
@@ -25,8 +38,8 @@ abstract class View{
         }
 
         require( $template );
-
     }
+
 
     /**
      * Returns a template file

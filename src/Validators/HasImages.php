@@ -1,8 +1,8 @@
 <?php
 
-namespace Wooves\ProductHealth\Validators;
+namespace MindBlown\ProductHealth\Validators;
 
-use Wooves\ProductHealth\Contracts\Validator;
+use MindBlown\ProductHealth\Contracts\Validator;
 
 class HasImages extends Validator{
 

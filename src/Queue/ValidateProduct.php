@@ -1,8 +1,8 @@
 <?php
 
-namespace Wooves\ProductHealth\Queue;
+namespace MindBlown\ProductHealth\Queue;
 
-use Wooves\ProductHealth\Contracts\Queueable;
+use MindBlown\ProductHealth\Contracts\Queueable;
 
 class ValidateProduct extends Queueable{
 
@@ -30,10 +30,7 @@ class ValidateProduct extends Queueable{
             
             //we have a failed test:
             if( $instance->test() == false ){
-
-                //log the message somewhere:
-                error_log( $instance->message() );
-
+                $instance->to_issue()->save();
             }
         }
     }
@@ -47,7 +44,7 @@ class ValidateProduct extends Queueable{
     {
         $response = [];
         $dir = PRODUCTHEALTH_PATH .'/src/Validators';
-        $namespace = '\\Wooves\\ProductHealth\\Validators\\';
+        $namespace = '\\MindBlown\\ProductHealth\\Validators\\';
 
 
         $files = scandir( $dir );
