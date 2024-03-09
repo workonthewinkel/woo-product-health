@@ -10,12 +10,12 @@ class AdminPage extends View{
     
     public function data() : array
     {
-        return [];
-        /*$controller = new ProductController;
+        
+        $controller = new ProductController;
         return [
             'warnings' => $controller->get_warnings(),
             'improvements' => $controller->get_improvements()
-        ];*/
+        ];
     }
 
 }

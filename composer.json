@@ -18,5 +18,8 @@
         "files": [
             "src/functions.php"
         ]
+    },
+    "require": {
+        "illuminate/collections": "^10.47"
     }
 }
