@@ -1,0 +1,22 @@
+{
+    "name": "knurft/woo-product-health",
+    "description": "Check the health of your Woocommerce products",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Luc Princen",
+            "email": "luc@workonthewinkel.nl"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Wooves\\ProductHealth\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    }
+}

@@ -1,0 +1,11 @@
+
+{
+  "name": "woo-product-health",
+  "version": "0.1.0",
+  "main": "Gruntfile.js",
+  "author": "YOUR NAME HERE",
+  "scripts" : {
+  },
+  "devDependencies": {
+  }
+}
