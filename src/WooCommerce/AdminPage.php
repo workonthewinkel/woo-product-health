@@ -3,6 +3,7 @@
 namespace Wooves\ProductHealth\WooCommerce;
 
 use Wooves\ProductHealth\Contracts\View;
+use Wooves\ProductHealth\Controllers\ProductController;
 
 class AdminPage extends View{
 
@@ -10,11 +11,11 @@ class AdminPage extends View{
     
     public function data() : array
     {
-        
         $controller = new ProductController;
+        $controller->scan();
+
         return [
-            'warnings' => $controller->get_warnings(),
-            'improvements' => $controller->get_improvements()
+          //  'products' => $controller->get_batch()
         ];
     }
 

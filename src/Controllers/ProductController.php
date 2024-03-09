@@ -2,48 +2,40 @@
 
 namespace Wooves\ProductHealth\Controllers;
 
-use Illuminate\Support\Collection;
 use Wooves\ProductHealth\Contracts\Controller;
 
 class ProductController extends Controller{
 
-    /**
-     * Warnings and improvements collections
-     *
-     * @var Collection
-     */
-    protected $warnings;
-    protected $improvements;
 
     /**
-     * Constructor
+     * Trigger a scan for each product
+     *
+     * @return void
      */
-    public function __construct()
+    public function scan()
     {
-        $this->warnings = \collect([]);
-        $this->improvements = \collect([]);
+        $products = $this->get_batch();
+        
+        //schedule a job for each product:
+        foreach( $products as $product ){
+            as_schedule_single_action( 
+                time(),
+                'ph_validate_product', 
+                ['product_id' => $product->get_id() ]
+            );
+        }   
     }
 
 
     /**
-     * Returns warnings
+     * Return all products 
      *
-     * @return Collection
+     * @return void
      */
-    public function get_warnings() : Collection
+    public function get_batch()
     {
-        return $this->warnings;
+        return \wc_get_products([ 'limit' => 3 ]);
     }
 
-
-    /**
-     * Returns improvements
-     *
-     * @return Collection
-     */
-    public function get_improvements() : Collection
-    {
-        return $this->improvements;
-    }
 
 }

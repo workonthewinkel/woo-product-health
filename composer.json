@@ -1,5 +1,5 @@
 {
-    "name": "knurft/woo-product-health",
+    "name": "wooves/woo-product-health",
     "description": "Check the health of your Woocommerce products",
     "type": "wordpress-plugin",
     "license": "GPL-2.0-or-later",

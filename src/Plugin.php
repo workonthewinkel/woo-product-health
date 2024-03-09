@@ -2,6 +2,7 @@
 
 namespace Wooves\ProductHealth;
 
+use Wooves\ProductHealth\Queue\Register as Queue;
 use Wooves\ProductHealth\WooCommerce\RegisterMenu;
 
 /**
@@ -12,7 +13,9 @@ class Plugin {
 	/**
 	 * Runs when the plugin is first activated.
 	 */
-	public function install(): void {
+	public function install(): void 
+    {
+        
 	}
 
 	/**
@@ -21,5 +24,6 @@ class Plugin {
 	public function init(): void {
 
         ( new RegisterMenu )->register_hooks();
+        ( new Queue )->register_hooks();
 	}
 }
