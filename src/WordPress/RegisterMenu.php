@@ -1,9 +1,9 @@
 <?php
 
-namespace MindBlown\ProductHealth\WooCommerce;
+namespace MindBlown\ProductHealth\WordPress;
 
 use MindBlown\ProductHealth\Contracts\Hookable;
-use MindBlown\ProductHealth\WooCommerce\AdminPage;
+use MindBlown\ProductHealth\WordPress\AdminPage;
 
 class RegisterMenu extends Hookable{
 

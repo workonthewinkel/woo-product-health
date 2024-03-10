@@ -1,0 +1,23 @@
+:root {
+    --border-radius: .5em;
+    --sidebar-width: 280px;
+    --deg: 0deg;
+    --progress-offset: 100px;
+    
+    --primary: #fae6e4;
+    --secondary: #00428e;
+    --primary-dark: #{ darken( #fae6e4, 20% ) };
+    --secondary-dark: #{ darken( #00428e, 20% ) };
+
+    --grey: #FAFAFA;
+    --grey-200: #E5E7EB;
+    --grey-600: #9CA3AF;
+
+    --black: #111111;
+    --black-600: #444;
+
+    --color-success: #22c55e;
+    --color-error: #dc2626;
+    --color-warn: #facc15;
+    --color-info: #0ea5e9;
+}

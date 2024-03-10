@@ -24,7 +24,7 @@ class HasMetaDescription extends Validator{
     public function message() : string
     {
         return sprintf(
-            __( '%s doesn\'t seem to have a meta description.', 'product-health' ),
+            __( '<a href="[link]">%s</a> doesn\'t seem to have a meta description.', 'product-health' ),
             $this->product->get_title()
         );
     }

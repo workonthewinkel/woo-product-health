@@ -2,9 +2,10 @@
 
 namespace MindBlown\ProductHealth;
 
+use MindBlown\ProductHealth\WordPress\Assets;
+use MindBlown\ProductHealth\WordPress\RegisterMenu;
 use Illuminate\Database\Capsule\Manager as Capsule;
 use MindBlown\ProductHealth\Queue\Register as Queue;
-use MindBlown\ProductHealth\WooCommerce\RegisterMenu;
 
 /**
  * Plugin God class.
@@ -25,6 +26,7 @@ class Plugin {
 	 */
 	public function init(): void {
 
+        ( new Assets )->register_hooks();
         ( new RegisterMenu )->register_hooks();
         ( new Queue )->register_hooks();
 

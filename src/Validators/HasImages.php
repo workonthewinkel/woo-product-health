@@ -6,6 +6,8 @@ use MindBlown\ProductHealth\Contracts\Validator;
 
 class HasImages extends Validator{
 
+    protected $importance = 'medium';
+
     /**
      * Does this product have stock left?
      *
@@ -24,7 +26,7 @@ class HasImages extends Validator{
     public function message() : string
     {
         return sprintf(
-            __( '%s doesn\'t seem to have images.', 'product-health' ),
+            __( '<a href="[link]">%s</a> doesn\'t seem to have images.', 'product-health' ),
             $this->product->get_title()
         );
     }

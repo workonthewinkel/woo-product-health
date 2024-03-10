@@ -6,6 +6,7 @@ use MindBlown\ProductHealth\Contracts\Validator;
 
 class HasEan extends Validator{
 
+    protected $importance = 'critical';
 
     /**
      * Does this product have an EAN?
@@ -25,7 +26,7 @@ class HasEan extends Validator{
     public function message() : string
     {
         return sprintf(
-            __( '%s doesn\'t have an EAN-number. EAN numbers are required by the European Union.', 'product-health' ),
+            __( '<a href="[link]">%s</a> doesn\'t have an EAN-number. EAN numbers are required by the European Union.', 'product-health' ),
             $this->product->get_title()
         );        
     }

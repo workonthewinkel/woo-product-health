@@ -30,7 +30,7 @@ class HasSku extends Validator{
     public function message() : string
     {
         return sprintf(
-            __( '%s, doesn\'t have a SKU.', 'product-health' ),
+            __( '<a href="[link]">%s</a> doesn\'t have a SKU.', 'product-health' ),
             $this->product->get_title()
         );
     }

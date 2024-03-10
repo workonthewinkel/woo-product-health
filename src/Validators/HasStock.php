@@ -33,12 +33,12 @@ class HasStock extends Validator{
         $quantity = $this->product->get_stock_quantity();
         if( $quantity <= 0 ){
             return sprintf(
-                __( '%s, has really no stock left.', 'product-health' ),
+                __( '<a href="[link]">%s</a> has no stock left.', 'product-health' ),
                 $this->product->get_title()
             );
         }else{
             return sprintf( 
-                __( '%s, has really low stock (%i)', 'product-health' ),
+                __( '<a href="[link]">%s</a> has really low stock (%i)', 'product-health' ),
                 $this->product->get_title(),
                 $quantity
             );
