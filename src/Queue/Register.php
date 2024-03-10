@@ -10,10 +10,29 @@ class Register{
         $queueables = $this->queueables();
         foreach( $queueables as $queueable ){
 
-            //loop through each instance and register their hook
+            //loop through each instance and listen for their events:
             $instance = '\\MindBlown\\ProductHealth\\Queue\\'.$queueable;
             ( new $instance )->register_hooks();
         }
+
+        //register any recurring jobs:
+        add_action( 'init', [ $this, 'register_recurring' ]);
+    }
+
+
+    /**
+     * Register any recurring jobs for this plugin
+     *
+     * @return void
+     */
+    public function register_recurring() : void
+    {
+        //daily check if our updates are out of date
+        as_schedule_recurring_action( 
+            time(),
+            DAY_IN_SECONDS,
+            'ph_update_issues', 
+        );
     }
 
 

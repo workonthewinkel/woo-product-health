@@ -6,6 +6,7 @@ use MindBlown\ProductHealth\WordPress\Assets;
 use MindBlown\ProductHealth\WordPress\RegisterMenu;
 use Illuminate\Database\Capsule\Manager as Capsule;
 use MindBlown\ProductHealth\Queue\Register as Queue;
+use MindBlown\ProductHealth\Models\Schema\AddIssuesTable;
 
 /**
  * Plugin God class.
@@ -17,7 +18,7 @@ class Plugin {
 	 */
 	public function install(): void 
     {
-        
+        ( new AddIssuesTable() )->maybe_run();
 	}
 
     

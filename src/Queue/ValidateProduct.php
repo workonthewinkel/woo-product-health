@@ -17,9 +17,10 @@ class ValidateProduct extends Queueable{
     /**
      * Run this validator
      *
+     * @param int $product_id
      * @return void
      */
-    public function run( $product_id )
+    public function run( $product_id ) : void
     {
         $product = \wc_get_product( $product_id );
         $validators = $this->validators();
