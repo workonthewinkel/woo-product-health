@@ -6,6 +6,8 @@ use MindBlown\ProductHealth\Contracts\Validator;
 
 class HasStock extends Validator{
 
+    protected $importance = 'medium';
+
     /**
      * Does this product have stock left?
      *

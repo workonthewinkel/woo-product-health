@@ -14,6 +14,13 @@ abstract class Validator{
     protected $product;
 
     /**
+     * Importance
+     *
+     * @var string
+     */
+    protected $importance;
+
+    /**
      * Constructor
      *
      * @param WC_Product $product
@@ -57,6 +64,7 @@ abstract class Validator{
         $issue = new Issue();
         $issue->product_id = $this->product->get_id();
         $issue->message = $this->message();
+        $issue->importance = Issue::get_importance( $this->importance );
         return $issue;
     }
 }

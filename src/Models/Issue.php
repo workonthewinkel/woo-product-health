@@ -37,7 +37,7 @@ class Issue extends Model{
      * @param string $value
      * @return integer
      */
-    public function get_importance( string $value ) : int
+    public static function get_importance( string $value ) : int
     {
         return static::IMPORTANCE[ $value ];
     }

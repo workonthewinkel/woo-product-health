@@ -6,6 +6,8 @@ use MindBlown\ProductHealth\Contracts\Validator;
 
 class HasSku extends Validator{
 
+    protected $importance = 'critical';
+
     /**
      * Does this product have a SKU?
      *
