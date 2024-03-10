@@ -48,8 +48,8 @@ class Plugin {
             'database'  => DB_NAME,
             'username'  => DB_USER,
             'password'  => DB_PASSWORD,
-            'charset'   => DB_CHARSET,
-            'collation' => DB_COLLATE,
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
         ]);
 
