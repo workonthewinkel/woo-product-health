@@ -28,11 +28,13 @@ class Register{
     public function register_recurring() : void
     {
         //daily check if our updates are out of date
-        as_schedule_recurring_action( 
-            time(),
-            DAY_IN_SECONDS,
-            'ph_update_issues', 
-        );
+        if( as_has_scheduled_action( 'ph_update_issues' ) === false ){
+            as_schedule_recurring_action( 
+                time(),
+                DAY_IN_SECONDS,
+                'ph_update_issues', 
+            );
+        }
     }
 
 
